@@ -9,6 +9,7 @@ export default function RootLayout({ children }) {
       <body>
         <AuthProvider>
           <Header />
+          <div>  </div>
           {children}
         </AuthProvider>
       </body>

@@ -8,7 +8,7 @@ const Header = () => {
   const { currentUser } = useAuth();
   console.log(currentUser);
   return (
-    <div>
+    <div className="HeaderContainer1">
       <div className="HeaderContainer">
         <a className="LinkContainer" href="/">Home</a>
         {currentUser === null && (
@@ -20,11 +20,12 @@ const Header = () => {
       </div>
       <div className="HeaderContainer">
         {currentUser && (
-          <div>
+          <div className="userContainer">
             {currentUser.username} <span  className="logoutContainer" onClick={() => logout()}>Logout</span>
           </div>
         )}
       </div>
+      <div></div>
     </div>
   );
 };

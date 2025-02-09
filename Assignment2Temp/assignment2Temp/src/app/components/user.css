@@ -1,4 +1,4 @@
-.weather-widget{
+.user-widget{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -9,24 +9,6 @@
     padding: 20px;
     background: linear-gradient(to bottom, #0e1c26, #2a454b, #294861);
     color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     margin-bottom: 1%;
-
-}
-
-.temperature{
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 25px;
-}
-
-.feels-like{
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-.location{
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }

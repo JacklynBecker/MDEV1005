@@ -2,11 +2,18 @@
     background-color: grey;
     justify-content: center;
     align-self: center;
+
     }
+
+.HeaderContainer1{
+    margin-bottom: 15px;
+    
+}
 
 .LinkContainer{
     color: black;
     margin: 50px;
+    
 
 }
 .LinkContainer:hover{
@@ -16,6 +23,12 @@
 .logoutContainer{
     border-color: black;
     border: 5px;
+    margin-bottom: 30px;
+    margin-left: 90%;
+}
+
+.userContainer{
+    margin-left: 10px;
 }
 
 .logoutContainer:hover{
