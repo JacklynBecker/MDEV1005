@@ -1,0 +1,13 @@
+"use client"
+import React from 'react'
+import { useAuth } from '../contexts/authContext'
+
+const Dashboard = () => {
+    const { currentUser } = useAuth();
+    console.log("HEREEE: " + currentUser);
+    return (
+        <div className='text-2xl font-bold pt-14'>Hello {currentUser.displayName ? currentUser.displayName : currentUser.email}, you are now logged in.</div>
+    )
+}
+
+export default Dashboard

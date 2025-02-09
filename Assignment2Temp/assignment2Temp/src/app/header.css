@@ -1,0 +1,23 @@
+.HeaderContainer{
+    background-color: grey;
+    justify-content: center;
+    align-self: center;
+    }
+
+.LinkContainer{
+    color: black;
+    margin: 50px;
+
+}
+.LinkContainer:hover{
+    color: blue;
+}
+
+.logoutContainer{
+    border-color: black;
+    border: 5px;
+}
+
+.logoutContainer:hover{
+    color: blue;
+}
