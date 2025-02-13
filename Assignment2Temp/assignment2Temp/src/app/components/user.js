@@ -11,7 +11,7 @@ const UserWidget = () => {
     return (
         <div className='user-widget'>
             <div className='person-container'>
-                <img src={PersonSVG} alt="personSVG" className='person'/>
+                <img src="https://www.freeiconspng.com/uploads/msn-people-person-profile-user-icon--icon-search-engine-11.png" alt="personSVG" className='person'/>
             </div>
             <div className='username'>Username: {currentUser.username}</div>
             <div className='email'>Email: {currentUser.email}</div>

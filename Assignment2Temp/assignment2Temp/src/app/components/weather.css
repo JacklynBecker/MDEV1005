@@ -4,14 +4,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 500px;
     border-radius: 35px;
     padding: 20px;
     background: linear-gradient(to bottom, #0e1c26, #2a454b, #294861);
     color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     margin-bottom: 1%;
-
+    height: 305px;
 }
 
 .temperature{
@@ -29,4 +29,29 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-top: 5px;
+}
+
+.moon{
+    fill: white;
+    width: 80px;
+    height: 80px;
+}
+
+.sun{
+    background-color: orange;
+    filter: drop-shadow(0 0 20px rgba(255,165,0,0.8));
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 500px){
+    .weather-widget{
+        width: 460px;
+        margin-left: 0px;
+        border-radius: 35px;
+        padding: 0px;
+
+    }
+    
 }

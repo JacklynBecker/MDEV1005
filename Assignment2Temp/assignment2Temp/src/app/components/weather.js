@@ -1,7 +1,7 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./weather.css"
-
+import { useState } from "react";
 import axios from 'axios'
 
 import MoonSvg from '../assets/svgs/dark_mode_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg'
@@ -9,20 +9,32 @@ import CloudSvg from "../assets/svgs/cloud_24dp_E8EAED_FILL1_wght400_GRAD0_opsz2
 
 
 const WeatherWidget = ({location}) => {
-    //const { currentUser } = useAuth();
-    //console.log("HEREEE: " + currentUser);
+    const [weatherData, setWeatherData] = useState(null)
+    
+    useEffect(()=> {
+        if(location.length){
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=5b6d1a529f7de719dccf535e6b2f0aa6&units=metric`)
+            .then(response =>{
+                setWeatherData(response.data)
+            }).catch(error=>{
+                console.error("error: ", error)
+            })
+        }
+
+    }, [location])
+
+    if(!weatherData) return <div>Loading...</div> 
+
+
     return (
         <div className='weather-widget'>
-            <img src={MoonSvg} alt="MoonSVG" className='moon'/>
-            <div className='cloud-container'>
-                <img src={CloudSvg} alt="cloudSVG" className='cloud'/>
-            </div>
-            <div className='temperature'>temperature</div>
-            <div className='weather'>weather</div>
-            <div className='low-high'>low-high</div>
-            <div className='feels-like'>feels-like</div>
-            <div className='location'>{location}</div>
-            <div className='humidity'>humidity</div>
+            <div className='sun'></div>
+            <div className='temperature'>{Math.round(weatherData.main.temp)}°</div>
+            <div className='weather'>{weatherData.weather[0].main}</div>
+            <div className='low-high'>{Math.round(weatherData.main.temp_min)}° / {Math.round(weatherData.main.temp_max)}°</div>
+            <div className='feels-like'>Feels like: {Math.round(weatherData.main.feels_like)}°</div>
+            <div className='location'>{weatherData.name}</div>
+            <div className='humidity'>Humidity: {weatherData.main.humidity}</div>
         </div>
     )
 }

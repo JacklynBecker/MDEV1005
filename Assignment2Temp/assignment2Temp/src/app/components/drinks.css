@@ -1,4 +1,4 @@
-.user-widget{
+.drink-widget{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -7,24 +7,23 @@
     width: 500px;
     border-radius: 35px;
     padding: 20px;
-    background-color:#E8EEFA;
-    color:black;
-    border-color: cornflowerblue;
-    border-width: 10px;
-    margin-bottom: 1%;
+    background-color:#adc8ed;
+    color: black;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    height: 340px;
-    margin-top: 5px;
-
+    margin-bottom: 1%;
 }
 
-.person{
-    width: 70px;
-    height: 70px;
+.drinkImage{
+    width: 250px;
+}
+
+.drinkName{
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 500px){
-    .user-widget{
+    .drink-widget{
         width: 445px;
         border-radius: 35px;
         padding: 20px;

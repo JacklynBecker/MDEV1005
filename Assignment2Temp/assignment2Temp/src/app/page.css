@@ -1,0 +1,42 @@
+.component-container{
+    display: flex;
+    flex-direction: row;
+
+    }
+
+.weather-container{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+form input{
+    font-size: 16px;
+    padding: 5px;
+    
+}
+
+form button{
+    background-color: #4177d4;
+  border: none;
+  color: white;
+  padding: 7px;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+form button:hover {opacity: 1}
+
+@media screen and (max-width: 1200px){
+    .component-container{
+        display: flex;
+        flex-direction: column;
+        
+    
+        }
+    
+}

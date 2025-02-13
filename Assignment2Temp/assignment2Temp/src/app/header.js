@@ -8,7 +8,6 @@ const Header = () => {
   const { currentUser } = useAuth();
   console.log(currentUser);
   return (
-    <div className="HeaderContainer1">
       <div className="HeaderContainer">
         <a className="LinkContainer" href="/">Home</a>
         {currentUser === null && (
@@ -17,16 +16,15 @@ const Header = () => {
             <a className="LinkContainer" href="/register">Register</a>
           </Fragment>
         )}
-      </div>
-      <div className="HeaderContainer">
         {currentUser && (
-          <div className="userContainer">
-            {currentUser.username} <span  className="logoutContainer" onClick={() => logout()}>Logout</span>
-          </div>
+          <Fragment >
+            <a className="LinkContainer" href="/meme">Meme Generator</a>
+            <a className="LinkContainer" href="/drinks">Drinks</a>
+            <button  className="logoutContainer" onClick={() => logout()}>LOGOUT</button>
+          </Fragment>
+          
         )}
       </div>
-      <div></div>
-    </div>
   );
 };
 export default Header;
