@@ -22,6 +22,7 @@ const Header = () => {
           <Fragment >
             <a className="LinkContainer" href="/meme">Meme Generator</a>
             <a className="LinkContainer" href="/drinks">Drinks</a>
+            <a className="LinkContainer" href="/weather">Weather</a>
             <button  className="logoutContainer" onClick={() => {logout(); router.push("/");}}>LOGOUT</button>
           </Fragment>
           
