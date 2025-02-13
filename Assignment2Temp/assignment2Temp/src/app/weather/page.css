@@ -15,6 +15,7 @@
     width: 200px;
     display:flex;
     justify-content: center;
+    border-radius: 4px;
 }
 
 .entire-container{
@@ -47,6 +48,10 @@ form button{
 }
 
 form button:hover {opacity: 1}
+
+h1 {
+    color: white;
+}
 
 @media screen and (max-width: 1000px){
     .forecast-container{

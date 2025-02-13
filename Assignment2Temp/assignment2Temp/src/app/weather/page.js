@@ -7,8 +7,8 @@ import "./page.css"
 const WeatherForecast = () => {
   const [forecast, setForecast] = useState([]);
   const API_KEY = "IyDcXKoNrADcCXq5e6tbgHr5xVqz8sYd"; // Replace with your Tomorrow.io API key
-  const [location, setLocation] = useState('new york'); // Latitude, Longitude for New York
-  const [inputValue, setInputValue] = useState('new york');
+  const [location, setLocation] = useState('toronto'); // Latitude, Longitude for New York
+  const [inputValue, setInputValue] = useState('toronto');
 
   //get weather data and set to forecast
   useEffect(() => {
@@ -49,6 +49,7 @@ const WeatherForecast = () => {
 
   return (
     <div className="entire-container">
+        <h1>7-Day Forecast</h1>
         <form onSubmit={handleFormSubmit}>
               <input type="text" value={inputValue} 
               onChange={(e)=> {setInputValue(e.target.value)}}/>
@@ -58,9 +59,9 @@ const WeatherForecast = () => {
       {forecast.map((day, index) => (
         <Card key={index} className="card-container">
           <CardContent>
-            <p className="font-bold">{getDayOfWeek(day.startTime)}</p>
+            <p >{getDayOfWeek(day.startTime)}</p>
             {getWeatherIcon(day.values.temperature)}
-            <p className="text-lg">{Math.round(day.values.temperature)}°C</p>
+            <p >{Math.round(day.values.temperature)}°C</p>
           </CardContent>
         </Card>
       ))}

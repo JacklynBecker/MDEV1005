@@ -14,8 +14,8 @@ const Home = () => {
   //get current user
   const { currentUser } = useAuth();
   //set location and drink to default values
-  const [inputValue, setInputValue] = useState('London');
-  const [location, setLocation] = useState('London');
+  const [inputValue, setInputValue] = useState('toronto');
+  const [location, setLocation] = useState('toronto');
   const [input2Value, setInput2Value] = useState('margarita');
   const [drink, setDrink] = useState('margarita');
 

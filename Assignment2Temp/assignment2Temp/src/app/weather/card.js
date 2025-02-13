@@ -1,9 +1,9 @@
 const Card = ({ children, className }) => (
-    <div className={`bg-white shadow-md rounded-lg p-4 ${className}`}>
+    <div className={`${className}`}>
       {children}
     </div>
   );
   
-  const CardContent = ({ children }) => <div className="p-2">{children}</div>;
+  const CardContent = ({ children }) => <div >{children}</div>;
   
   export { Card, CardContent };
