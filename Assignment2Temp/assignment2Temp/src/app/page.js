@@ -7,6 +7,7 @@ import { useState } from "react";
 import "./page.css"
 import MemeWidget from "./components/meme";
 import Calculator from "./components/calculator/calculator";
+import ToDoList from "./components/ToDoList";
 
 
 const Home = () => {
@@ -30,7 +31,7 @@ const Home = () => {
     <div>
       <div>
         {currentUser === null && (
-          <div> Please Sign In To View Content! </div>
+          <div className="home-container"> Please Sign In To View Content! </div>
         )}
       </div>
       <div>
@@ -59,6 +60,7 @@ const Home = () => {
           <MemeWidget/>
           <Calculator/>
           </div>
+          <ToDoList/>
           </div>
         )}
       </div>

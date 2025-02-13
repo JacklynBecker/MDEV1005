@@ -20,7 +20,7 @@
 
 .meme-container button {
   grid-column: 1 / -1;
-  background-color: rgb(50, 112, 219);
+  background-color: #4d7db0;
   border-radius: 5px;
   color: black;
   border: none;

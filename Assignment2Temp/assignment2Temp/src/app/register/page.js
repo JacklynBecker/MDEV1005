@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { register } from "../Firebase/firebase";
+import "./page.css"
 
 const Register = () => {
   const router = useRouter();
@@ -21,12 +22,13 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="register-container">
       <h1>Register</h1>
       {errorMessage && <div>{errorMessage}</div>}
-      <form onSubmit={onSubmit}>
+      <form className="register-form" onSubmit={onSubmit}>
         <div>
           <input
+            className="register-username"
             type="text"
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
@@ -35,6 +37,7 @@ const Register = () => {
 
         <div>
           <input
+          className="register-email"
             type="text"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -42,13 +45,14 @@ const Register = () => {
         </div>
         <div>
           <input
+          className="register-password"
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div>
-          <button type="submit">Sign Up</button>
+          <button className="register-button" type="submit">Sign Up</button>
         </div>
       </form>
     </div>

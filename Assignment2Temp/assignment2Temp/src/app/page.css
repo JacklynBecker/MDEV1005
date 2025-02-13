@@ -1,7 +1,7 @@
 .component-container{
     display: flex;
     flex-direction: row;
-
+    font-family: Arial, Helvetica, sans-serif;
     }
 
 .weather-container{
@@ -12,6 +12,7 @@
 form input{
     font-size: 16px;
     padding: 5px;
+    border-radius: 4px;
     
 }
 
@@ -30,6 +31,13 @@ form button{
 }
 
 form button:hover {opacity: 1}
+
+.home-container{
+    margin-top: 5px;
+    color: white;
+    display:flex;
+    justify-content: center;
+}
 
 @media screen and (max-width: 1200px){
     .component-container{

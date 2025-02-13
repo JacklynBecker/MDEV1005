@@ -1,37 +1,55 @@
+import React, {useState} from 'react'
 import "./ToDoList.css"
 
-function TODOList({ todos }) {
-    return (
-      <ol className="todo_list">
-        {todos && todos.length > 0 ? (
-          todos?.map((item, index) => (
-            <Item key={index} item={item} setTodos={setTodos} />
-          ))
-        ) : (
-          <p>Seems lonely in here, what are you up to?</p>
-        )}
-      </ol>
-    );
-  }
-  export default TODOList;
+function ToDoList({ todos }) {
 
-  function Item({ item }) {
+    const [tasks, setTasks] = useState(["Eat Breakfast", "take a shower"]);
+    const [newTask, setNewTask] = useState("");
+
+    function handleInputChange(event){
+        setNewTask(event.target.value);
+    }
+
+    function addTask(){
+      if(newTask.trim() !== ""){
+        setTasks(t => [...t, newTask]);
+        setNewTask("");
+      }
+    }
+
+    function deleteTask(index){
+      const updatedTasks = tasks.filter((_, i)=> i !== index);
+      setTasks(updatedTasks);
+    }
+
+
     return (
-      <li id={item?.id} className="todo_item">
-        <button className="todo_items_left">
-          <svg>
-            <circle cx="11.998" cy="11.998" fillRule="nonzero" r="9.998" />
-          </svg>
-          <p>{item?.title}</p>
-        </button>
-        <div className="todo_items_right">
-          <button>
-            <span className="visually-hidden">Edit</span>
-          </button>
-          <button>
-            <span className="visually-hidden">Delete</span>
-          </button>
+      <div className='to-do-list'>
+        <h2 className='to-do-list-header'>To Do List</h2>
+        <div>
+          <input 
+              className='to-do-text-input'
+              type="text"
+              placeholder="Enter a Task"
+              value={newTask}
+              onChange={handleInputChange}
+              />
+          <button className='add-button' onClick={addTask}>Add</button>
+
+          <ol>
+            {tasks.map((task, index) =>
+                <li key={index}>
+                    <span className='text'>{task}</span>
+                    <button
+                      className='delete-button'
+                      onClick={()=> deleteTask(index)}>
+                      Delete
+                    </button>
+                </li>
+            )}
+          </ol>
         </div>
-      </li>
+      </div>
     );
   }
+  export default ToDoList;

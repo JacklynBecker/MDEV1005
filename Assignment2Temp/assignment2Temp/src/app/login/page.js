@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { login } from "../Firebase/firebase";
+import "./page.css"
 
 const Login = () => {
   const router = useRouter();
@@ -20,12 +21,13 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Login</h1>
       {errorMessage && <div>{errorMessage}</div>}
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="login-form">
         <div>
           <input
+          className="login-email"
             type="text"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -33,13 +35,14 @@ const Login = () => {
         </div>
         <div>
           <input
+            className="login-password"
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div>
-          <button type="submit">Sign In</button>
+          <button className="login-button" type="submit">Sign In</button>
         </div>
       </form>
     </div>
