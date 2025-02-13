@@ -11,6 +11,7 @@ const Drinks = () => {
     const [drink, setDrink] = useState('margarita');
     const [inputValue, setInputValue] = useState('margarita');
 
+    //get data from api and set to drinkData
     useEffect(()=> {
         if(drink.length){
             axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
@@ -24,13 +25,16 @@ const Drinks = () => {
 
     }, [drink])
 
+    //set drink when input and button clicked
     const handleFormSubmit = (e) => {
         e.preventDefault()
         setDrink(inputValue)
       }
 
+      //display loading if not drink data available yet 
     if(!drinkData) return <div>Loading...</div> 
 
+    //display none found if no results match that drink name
     if(drinkData.drinks == null) return <div>None Found</div>
 
     return (

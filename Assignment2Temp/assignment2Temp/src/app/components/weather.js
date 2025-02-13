@@ -4,13 +4,11 @@ import "./weather.css"
 import { useState } from "react";
 import axios from 'axios'
 
-import MoonSvg from '../assets/svgs/dark_mode_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg'
-import CloudSvg from "../assets/svgs/cloud_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg"
-
-
+//display todays weather for city
 const WeatherWidget = ({location}) => {
     const [weatherData, setWeatherData] = useState(null)
     
+    //get weather data from api and set to weatherData
     useEffect(()=> {
         if(location.length){
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=5b6d1a529f7de719dccf535e6b2f0aa6&units=metric`)
@@ -23,6 +21,7 @@ const WeatherWidget = ({location}) => {
 
     }, [location])
 
+    //if no data available yet, display still loading
     if(!weatherData) return <div>Loading...</div> 
 
 

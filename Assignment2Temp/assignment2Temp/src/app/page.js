@@ -11,22 +11,26 @@ import ToDoList from "./components/ToDoList";
 
 
 const Home = () => {
+  //get current user
   const { currentUser } = useAuth();
+  //set location and drink to default values
   const [inputValue, setInputValue] = useState('London');
   const [location, setLocation] = useState('London');
   const [input2Value, setInput2Value] = useState('margarita');
   const [drink, setDrink] = useState('margarita');
 
+  //set location on button click
   const handleFormSubmit = (e) => {
     e.preventDefault()
     setLocation(inputValue)
   }
 
+  //set drink on button click
   const handleForm2Submit = (e) => {
     e.preventDefault()
     setDrink(input2Value)
   }
-  //console.log(currentUser);
+
   return (
     <div>
       <div>

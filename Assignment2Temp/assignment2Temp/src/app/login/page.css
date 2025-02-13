@@ -47,3 +47,7 @@ h1 {
     background-color: #35597f;
     color: white;
 }
+
+.login-error{
+    color: red;
+}

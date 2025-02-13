@@ -1,15 +1,18 @@
 import React, {useState} from 'react'
 import "./ToDoList.css"
 
+//list of items to do, can delete and add 
 function ToDoList({ todos }) {
 
-    const [tasks, setTasks] = useState(["Eat Breakfast", "take a shower"]);
+    const [tasks, setTasks] = useState(["Take a shower"]);
     const [newTask, setNewTask] = useState("");
 
+    //set new task value when input in field
     function handleInputChange(event){
         setNewTask(event.target.value);
     }
 
+    //add task to list of tasks
     function addTask(){
       if(newTask.trim() !== ""){
         setTasks(t => [...t, newTask]);
@@ -17,6 +20,7 @@ function ToDoList({ todos }) {
       }
     }
 
+    //delete task from list of tasks
     function deleteTask(index){
       const updatedTasks = tasks.filter((_, i)=> i !== index);
       setTasks(updatedTasks);

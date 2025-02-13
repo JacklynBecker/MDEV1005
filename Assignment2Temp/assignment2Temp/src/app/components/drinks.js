@@ -4,10 +4,11 @@ import "./drinks.css"
 import { useState } from "react";
 import axios from 'axios'
 
-
+//display searched up drink
 const DrinkWidget = ({drink}) => {
     const [drinkData, setDrinkData] = useState(null)
     
+    //get drink data
     useEffect(()=> {
         if(drink.length){
             axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)

@@ -3,8 +3,7 @@ import React from 'react'
 import "./user.css"
 import { useAuth } from "../contexts/authContext";
 
-import PersonSVG from '../assets/svgs/person_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg'
-
+//display current user info
 const UserWidget = () => {
     const { currentUser } = useAuth();
 

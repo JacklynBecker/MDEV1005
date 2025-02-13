@@ -4,6 +4,7 @@ import './page.css';
 
 function Meme() {
   const url = 'https://api.imgflip.com/get_memes'
+  //default meme
   const [meme, setMeme] = useState({
     topText: '',
     bottomText: '',
@@ -11,6 +12,7 @@ function Meme() {
   });
 
   const [allMemes, setAllMemes] = useState([]);
+  //retrieve memes from api and set allMemes
   useEffect(() => {
     fetch(url)
       .then((response) => {
@@ -21,6 +23,7 @@ function Meme() {
       .catch((error) => console.error(error));
   }, []);
 
+  //grab a random meme
   const getImage = () => {
     const image = allMemes[Math.floor(Math.random() * allMemes.length)];
 
@@ -30,6 +33,7 @@ function Meme() {
     }));
   };
 
+  //handle caption changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setMeme((prevMeme) => ({

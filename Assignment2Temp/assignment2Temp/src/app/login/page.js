@@ -7,9 +7,12 @@ import "./page.css"
 
 const Login = () => {
   const router = useRouter();
+  //set everything to default of blank
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
+
+  //on login click, user is logged in and we are sent to home page
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,7 +26,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <h1>Login</h1>
-      {errorMessage && <div>{errorMessage}</div>}
+      {errorMessage && <div className="login-error">{errorMessage}</div>}
       <form onSubmit={onSubmit} className="login-form">
         <div>
           <input

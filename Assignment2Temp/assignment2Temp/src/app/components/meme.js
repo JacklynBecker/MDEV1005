@@ -4,10 +4,11 @@ import "./meme.css"
 import { useState } from "react";
 import axios from 'axios'
 
-
+//display memes 
 const MemeWidget = () => {
     const [memeData, setMemeData] = useState(null)
     
+    //get memes from api
     useEffect(()=> {
             axios.get(`https://api.imgflip.com/get_memes`)
             .then(response =>{

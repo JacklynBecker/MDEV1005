@@ -54,3 +54,7 @@ h1 {
     background-color: #35597f;
     color: white;
 }
+
+.register-error{
+    color: red;
+}

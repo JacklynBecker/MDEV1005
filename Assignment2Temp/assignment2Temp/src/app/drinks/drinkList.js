@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 
 
-
+//handle the ingredients list, check if ingredient exist before displaying
 const DrinksList = ({drinkData}) => {
 
     if(!drinkData) return <div>Loading...</div> 

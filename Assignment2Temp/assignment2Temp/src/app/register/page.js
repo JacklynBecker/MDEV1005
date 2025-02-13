@@ -7,10 +7,13 @@ import "./page.css"
 
 const Register = () => {
   const router = useRouter();
+  //set all variables to default value of nothing
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
+
+  //when button clicked, user is registered with firebase and we are sent to home page
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -24,7 +27,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <h1>Register</h1>
-      {errorMessage && <div>{errorMessage}</div>}
+      {errorMessage && <div className="register-error">{errorMessage}</div>}
       <form className="register-form" onSubmit={onSubmit}>
         <div>
           <input

@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import './calculator.css';
 
+//calculator widget
 const Calculator = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
 
+  //handle calculation and display result
   const handleClick = (value) => {
     if (value === '=') {
       try {

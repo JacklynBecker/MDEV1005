@@ -2,11 +2,13 @@
 import { useAuth } from "./contexts/authContext";
 import { Fragment } from "react";
 import { logout } from "./Firebase/firebase";
+import { useRouter } from "next/navigation";
 import "./header.css"
 
 const Header = () => {
+  //get currentUser and display different header links based on if user is logged in 
   const { currentUser } = useAuth();
-  console.log(currentUser);
+  const router = useRouter();
   return (
       <div className="HeaderContainer">
         <a className="LinkContainer" href="/">Home</a>
@@ -20,7 +22,7 @@ const Header = () => {
           <Fragment >
             <a className="LinkContainer" href="/meme">Meme Generator</a>
             <a className="LinkContainer" href="/drinks">Drinks</a>
-            <button  className="logoutContainer" onClick={() => logout()}>LOGOUT</button>
+            <button  className="logoutContainer" onClick={() => {logout(); router.push("/");}}>LOGOUT</button>
           </Fragment>
           
         )}
